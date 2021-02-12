@@ -25,16 +25,20 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('check-mods')->hourly();
-        $schedule->command('attendance-reminder')->hourly();
+// This functionality is currently covered by ArcommBot
+//
+//
+//
+//         $schedule->command('check-mods')->hourly();
+//         $schedule->command('attendance-reminder')->hourly();
 
-        $schedule->command('recruitment-reminder')->dailyAt('18:00')->when(function () {
-            return in_array(now()->dayOfWeek, [
-                Carbon::MONDAY,
-                Carbon::WEDNESDAY,
-                Carbon::FRIDAY
-            ]);
-        });
+//         $schedule->command('recruitment-reminder')->dailyAt('18:00')->when(function () {
+//             return in_array(now()->dayOfWeek, [
+//                 Carbon::MONDAY,
+//                 Carbon::WEDNESDAY,
+//                 Carbon::FRIDAY
+//             ]);
+//         });
     }
 
     /**
